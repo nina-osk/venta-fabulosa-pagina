@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { Robot, Code, Settings } from 'lucide-react';
+import { Bot, Code, Settings } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -21,7 +20,7 @@ const RoboticArms = () => {
           <Card className="border-2 border-robot-100 hover:border-robot-300 transition-all duration-300">
             <CardContent className="p-8 flex flex-col items-center text-center">
               <div className="w-16 h-16 rounded-full bg-robot-100 text-robot-600 flex items-center justify-center mb-6">
-                <Robot className="w-8 h-8" />
+                <Bot className="w-8 h-8" />
               </div>
               <h3 className="text-2xl font-bold mb-3">Asesoramiento</h3>
               <p className="text-gray-600 mb-6">
