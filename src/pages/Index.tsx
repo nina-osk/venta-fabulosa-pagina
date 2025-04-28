@@ -5,6 +5,7 @@ import HeroSection from '@/components/HeroSection';
 import RobotTypes from '@/components/RobotTypes';
 import Features from '@/components/Features';
 import UseCases from '@/components/UseCases';
+import VirtualReceptionist from '@/components/VirtualReceptionist';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
@@ -17,6 +18,7 @@ const Index = () => {
         <RobotTypes />
         <Features />
         <UseCases />
+        <VirtualReceptionist />
         <ContactCTA />
       </main>
       <Footer />
