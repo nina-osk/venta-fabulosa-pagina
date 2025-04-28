@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { video, users, star } from 'lucide-react';
+import { Video, Users, Star } from 'lucide-react';
 
 const RobotTypes = () => {
   return (
@@ -22,7 +22,7 @@ const RobotTypes = () => {
           <Card className="border-2 border-transparent hover:border-robot-200 transition-all duration-300 hover:shadow-xl overflow-hidden group">
             <CardHeader className="bg-gradient-to-r from-robot-500 to-robot-600 text-white relative h-48 flex items-center justify-center">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-              <video className="text-white w-20 h-20" />
+              <Video className="text-white w-20 h-20" />
               <CardTitle className="text-2xl relative z-10">Robots de Telepresencia</CardTitle>
               <CardDescription className="text-white/90 relative z-10">Conectando personas, eliminando distancias</CardDescription>
             </CardHeader>
@@ -64,7 +64,7 @@ const RobotTypes = () => {
           <Card className="border-2 border-transparent hover:border-robot-200 transition-all duration-300 hover:shadow-xl overflow-hidden group">
             <CardHeader className="bg-gradient-to-r from-tech-500 to-tech-600 text-white relative h-48 flex items-center justify-center">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-              <users className="text-white w-20 h-20" />
+              <Users className="text-white w-20 h-20" />
               <CardTitle className="text-2xl relative z-10">Robots Recepcionistas</CardTitle>
               <CardDescription className="text-white/90 relative z-10">Su equipo de bienvenida incansable</CardDescription>
             </CardHeader>
@@ -106,7 +106,7 @@ const RobotTypes = () => {
           <Card className="border-2 border-transparent hover:border-robot-200 transition-all duration-300 hover:shadow-xl overflow-hidden group">
             <CardHeader className="bg-gradient-to-r from-purple-500 to-indigo-600 text-white relative h-48 flex items-center justify-center">
               <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-300"></div>
-              <star className="text-white w-20 h-20" />
+              <Star className="text-white w-20 h-20" />
               <CardTitle className="text-2xl relative z-10">Robots para Eventos</CardTitle>
               <CardDescription className="text-white/90 relative z-10">Experiencias inolvidables que todos comentarán</CardDescription>
             </CardHeader>

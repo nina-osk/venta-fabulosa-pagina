@@ -1,50 +1,50 @@
-
 import React from 'react';
-import { Button } from '@/components/ui/button';
-import { robot } from 'lucide-react';
+import { Button } from "@/components/ui/button";
+import { ShieldCheck } from 'lucide-react';
+import { Bot } from 'lucide-react';
 
 const HeroSection = () => {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-32 overflow-hidden bg-gradient-to-b from-white to-blue-50">
-      <div className="container">
+    <section className="relative bg-gradient-to-b from-gray-50 to-white overflow-hidden">
+      <div className="container py-12 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="space-y-8 opacity-0 animate-fade-in-up" style={{animationDelay: '0.2s'}}>
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              TRANSFORME SU NEGOCIO CON <span className="text-gradient">ROBOTS SOCIALES</span>
+          <div>
+            <div className="inline-flex items-center py-1 px-3 rounded-full bg-robot-100 text-robot-700 mb-6">
+              <ShieldCheck className="w-4 h-4 mr-2" /> 
+              <span className="text-xs font-medium">Tecnología de vanguardia con soporte garantizado</span>
+            </div>
+            
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
+              <span className="text-gradient">TRANSFORME SU NEGOCIO</span> CON ROBOTS SOCIALES
             </h1>
-            <p className="text-xl text-gray-700 md:pr-10">
-              Soluciones robóticas innovadoras para restauración y eventos. 
-              Bienvenido al futuro de la atención al cliente.
+            
+            <p className="text-xl text-gray-700 mb-8">
+              <Bot className="inline-block mr-2 text-robot-600" />
+              <span className="font-medium">BIENVENIDO AL FUTURO DE LA ATENCIÓN AL CLIENTE</span>
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="btn-primary text-lg py-6 px-8 flex items-center gap-2">
-                <robot size={20} />
-                <span>Solicitar Demo Gratis</span>
-              </Button>
-              <Button variant="outline" className="btn-outline text-lg py-6 px-8">
-                Ver Catálogo
-              </Button>
-            </div>
+            
+            <p className="text-gray-600 mb-8">
+              Descubra cómo nuestros robots sociales pueden revolucionar la experiencia de sus clientes y optimizar sus operaciones. 
+              Desde la telepresencia hasta la recepción automatizada, tenemos la solución perfecta para su negocio.
+            </p>
+            
+            <Button size="lg">
+              Descubra nuestras soluciones
+            </Button>
           </div>
-          <div className="relative mx-auto lg:ml-auto opacity-0 animate-fade-in-up" style={{animationDelay: '0.5s'}}>
-            <div className="relative w-full h-[400px] animate-float">
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-64 h-64 rounded-full bg-tech-300/20 filter blur-xl"></div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[300px] h-[400px]">
-                <img 
-                  src="/placeholder.svg"
-                  alt="Robot social para negocios" 
-                  className="w-full h-full object-contain"
-                />
-              </div>
-            </div>
-            <div className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-[80%] h-8 bg-black/10 rounded-full filter blur-md"></div>
+          
+          <div className="relative">
+            <img 
+              src="/hero-robot.png" 
+              alt="RobotSocial" 
+              className="relative z-10 w-full max-w-lg mx-auto" 
+            />
+            
+            <div className="absolute -top-24 -left-24 bg-robot-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 w-80 h-80"></div>
+            <div className="absolute bottom-1/2 right-12 bg-tech-500 rounded-full mix-blend-multiply filter blur-xl opacity-70 w-64 h-64"></div>
           </div>
         </div>
       </div>
-      
-      {/* Background Elements */}
-      <div className="absolute top-32 right-10 w-64 h-64 rounded-full bg-robot-400/10 filter blur-3xl"></div>
-      <div className="absolute bottom-10 left-10 w-72 h-72 rounded-full bg-tech-400/10 filter blur-3xl"></div>
     </section>
   );
 };
