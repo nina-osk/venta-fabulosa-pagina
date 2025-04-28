@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { restaurant, party-popper } from 'lucide-react';
+import { Restaurant, PartyPopper } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
 
 const UseCases = () => {
@@ -12,7 +12,7 @@ const UseCases = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <div className="inline-flex items-center py-1 px-3 rounded-full bg-robot-100 text-robot-700 mb-6">
-                <restaurant className="w-5 h-5 mr-2" />
+                <Restaurant className="w-5 h-5 mr-2" />
                 <span className="text-sm font-medium">Sector Restauración</span>
               </div>
 
@@ -110,7 +110,7 @@ const UseCases = () => {
             </div>
             <div className="order-1 lg:order-2">
               <div className="inline-flex items-center py-1 px-3 rounded-full bg-tech-100 text-tech-700 mb-6">
-                <party-popper className="w-5 h-5 mr-2" />
+                <PartyPopper className="w-5 h-5 mr-2" />
                 <span className="text-sm font-medium">Eventos Especiales</span>
               </div>
 
