@@ -7,6 +7,7 @@ import Features from '@/components/Features';
 import UseCases from '@/components/UseCases';
 import VirtualReceptionist from '@/components/VirtualReceptionist';
 import RoboticArms from '@/components/RoboticArms';
+import CustomizedRobots from '@/components/CustomizedRobots';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
@@ -21,6 +22,7 @@ const Index = () => {
         <UseCases />
         <VirtualReceptionist />
         <RoboticArms />
+        <CustomizedRobots />
         <ContactCTA />
       </main>
       <Footer />
