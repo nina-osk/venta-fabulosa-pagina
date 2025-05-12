@@ -1,6 +1,8 @@
+
 import React from 'react';
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
+import CookieSettings from './CookieSettings';
 
 const Footer = () => {
   return (
@@ -91,10 +93,11 @@ const Footer = () => {
         
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">© 2025 RobotSocial. Todos los derechos reservados.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="flex flex-wrap space-x-6 mt-4 md:mt-0 items-center">
             <Link to="/legal#cookies" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Cookies</Link>
             <Link to="/legal#privacidad" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Privacidad</Link>
             <Link to="/legal#aviso-legal" className="text-gray-400 text-sm hover:text-white transition-colors">Aviso Legal</Link>
+            <CookieSettings />
           </div>
         </div>
       </div>

@@ -1,9 +1,21 @@
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavBar from '@/components/NavBar';
 import Footer from '@/components/Footer';
 
 const LegalPolicies = () => {
+  useEffect(() => {
+    // Scroll to hash fragment if present
+    const hash = window.location.hash;
+    if (hash) {
+      const id = hash.replace('#', '');
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }
+  }, []);
+
   return (
     <div className="min-h-screen flex flex-col">
       <NavBar />
@@ -12,7 +24,7 @@ const LegalPolicies = () => {
           <h1 className="text-3xl font-bold mb-8 text-gradient">Políticas Legales</h1>
           
           {/* Política de cookies */}
-          <section className="mb-12">
+          <section className="mb-12" id="cookies">
             <h2 className="text-2xl font-bold mb-4">Política de cookies</h2>
             <div className="prose prose-gray max-w-none">
               <p>La LSSI-CE, obliga a todos los que tenemos un blog o una web a advertir al usuario de la existencia de cookies, informar sobre ellas y requerirle permiso para descargarlas.</p>
@@ -80,7 +92,7 @@ const LegalPolicies = () => {
           </section>
           
           {/* Aviso Legal */}
-          <section className="mb-12">
+          <section className="mb-12" id="aviso-legal">
             <h2 className="text-2xl font-bold mb-4">Aviso legal</h2>
             <div className="prose prose-gray max-w-none">
               <p>El presente AVISO LEGAL regula los derechos y obligaciones de robotsConsultant.net y de los usuarios en relación el acceso, navegación y utilización de la presente web sin perjuicio de que robotsConsultant se reserve el derecho a modificar, sin previo aviso, su contenido, siendo vigentes las que se encuentren publicadas en el momento de navegación.</p>
