@@ -8,6 +8,7 @@ import UseCases from '@/components/UseCases';
 import VirtualReceptionist from '@/components/VirtualReceptionist';
 import RoboticArms from '@/components/RoboticArms';
 import CustomizedRobots from '@/components/CustomizedRobots';
+import EcommerceSection from '@/components/EcommerceSection';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
@@ -23,6 +24,7 @@ const Index = () => {
         <VirtualReceptionist />
         <RoboticArms />
         <CustomizedRobots />
+        <EcommerceSection />
         <ContactCTA />
       </main>
       <Footer />
