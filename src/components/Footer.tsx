@@ -1,6 +1,6 @@
-
 import React from 'react';
 import { Separator } from "@/components/ui/separator";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
@@ -92,9 +92,9 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <p className="text-gray-400 text-sm">© 2025 RobotSocial. Todos los derechos reservados.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
-            <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Privacidad</a>
-            <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Términos de Servicio</a>
-            <a href="#" className="text-gray-400 text-sm hover:text-white transition-colors">Aviso Legal</a>
+            <Link to="/legal#cookies" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Cookies</Link>
+            <Link to="/legal#privacidad" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Privacidad</Link>
+            <Link to="/legal#aviso-legal" className="text-gray-400 text-sm hover:text-white transition-colors">Aviso Legal</Link>
           </div>
         </div>
       </div>
