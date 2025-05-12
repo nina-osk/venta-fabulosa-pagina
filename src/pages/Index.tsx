@@ -6,7 +6,7 @@ import RobotTypes from '@/components/RobotTypes';
 import Features from '@/components/Features';
 import UseCases from '@/components/UseCases';
 import VirtualReceptionist from '@/components/VirtualReceptionist';
-import RoboticArms from '@/components/RoboticArms';
+import RoboticArms from '@/pages/RoboticArms';
 import CustomizedRobots from '@/components/CustomizedRobots';
 import EcommerceSection from '@/components/EcommerceSection';
 import ContactCTA from '@/components/ContactCTA';
@@ -22,7 +22,6 @@ const Index = () => {
         <Features />
         <UseCases />
         <VirtualReceptionist />
-        <RoboticArms />
         <CustomizedRobots />
         <EcommerceSection />
         <ContactCTA />

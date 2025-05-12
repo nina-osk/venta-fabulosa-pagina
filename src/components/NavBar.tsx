@@ -72,6 +72,7 @@ const NavBar = () => {
             <a href="#soluciones" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Soluciones</a>
             <a href="#restauracion" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Restauración</a>
             <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Eventos</a>
+            <a href="#brazosRoboticos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Roboticos</a>
             <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
             <Button variant="outline" className="border-robot-600 text-robot-600 w-full hover:bg-robot-50">
               Catálogo

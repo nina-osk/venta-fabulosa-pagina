@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LegalPolicies from "./pages/LegalPolicies";
 import CookieBanner from "./components/CookieBanner";
+import RoboticArms from "./pages/RoboticArms";
 
 const queryClient = new QueryClient();
 
@@ -20,7 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/legal" element={<LegalPolicies />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/brazosRoboticos" element={<RoboticArms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
