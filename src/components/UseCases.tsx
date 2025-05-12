@@ -2,7 +2,8 @@
 import React from 'react';
 import { Utensils, PartyPopper } from 'lucide-react';
 import { Card, CardContent } from "@/components/ui/card";
-
+import miRobot from '../images/robot-social.png';
+import miRobotSocial from '../images/robot-events.png';
 const UseCases = () => {
   return (
     <div>
@@ -84,7 +85,7 @@ const UseCases = () => {
               <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-robot-400 to-robot-600 opacity-10 blur-lg"></div>
               <div className="relative h-80 md:h-96 w-full rounded-2xl overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                   src= {miRobotSocial}
                   alt="Robot en restaurante" 
                   className="w-full h-full object-cover"
                 />
@@ -99,10 +100,10 @@ const UseCases = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="order-2 lg:order-1 relative">
-              <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-tech-400 to-tech-600 opacity-10 blur-lg"></div>
+              <div className="absolute -inset-4 rounded-2xl bg-gradient-to-r from-tech-400 to-tech-800 opacity-10 blur-lg"></div>
               <div className="relative h-80 md:h-96 w-full rounded-2xl overflow-hidden">
                 <img 
-                  src="/placeholder.svg" 
+                  src= {miRobot}
                   alt="Robot en evento" 
                   className="w-full h-full object-cover"
                 />
@@ -115,13 +116,13 @@ const UseCases = () => {
               </div>
 
               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                <span className="text-gradient">REVOLUCIONE SUS EVENTOS</span> <br />
-                Experiencias inolvidables que todos comentarán
+                <span className="text-gradient">REVOLUCIONA TUS EVENTOS</span> <br />
+                Te ofrecemos Experiencias inolvidables que todos comentarán
               </h2>
               
               <p className="text-gray-700 mb-8">
-                Destaque entre la competencia ofreciendo innovación en cada celebración. 
-                Nuestros robots son el complemento perfecto para bodas, congresos, ferias y todo tipo de acontecimientos.
+                Destaca entre tu competencia ofreciendo innovación en cada celebración. 
+                Nuestros robots son el complemento perfecto para congresos, ferias y todo tipo de acontecimientos.
               </p>
 
               <div className="grid md:grid-cols-2 gap-6">

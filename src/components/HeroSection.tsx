@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from "@/components/ui/button";
 import { ShieldCheck } from 'lucide-react';
 import { Bot } from 'lucide-react';
+import miImagen from '../images/Receptions.png';
 
 const HeroSection = () => {
   return (
@@ -28,14 +29,11 @@ const HeroSection = () => {
               Desde la telepresencia hasta la recepción automatizada, tenemos la solución perfecta para su negocio.
             </p>
             
-            <Button size="lg">
-              Descubra nuestras soluciones
-            </Button>
           </div>
           
           <div className="relative">
             <img 
-              src="/hero-robot.png" 
+               src= {miImagen}
               alt="RobotSocial" 
               className="relative z-10 w-full max-w-lg mx-auto" 
             />
