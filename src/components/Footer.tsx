@@ -10,7 +10,7 @@ const Footer = () => {
       <div className="container">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-2xl font-bold text-white mb-4">RobotSocial</h3>
+            <h3 className="text-2xl font-bold text-white mb-4">RobotsConsultant</h3>
             <p className="mb-6 text-gray-400">
               Transformando negocios con soluciones robóticas innovadoras para la restauración y eventos.
             </p>
@@ -77,7 +77,7 @@ const Footer = () => {
                   <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                   <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                 </svg>
-                <a href="mailto:info@robotsocial.es" className="hover:text-white transition-colors">info@robotsocial.es</a>
+                <a href="mailto:info@robotsconsultant.net" className="hover:text-white transition-colors">info@robotsconsultant.net</a>
               </li>
               <li className="flex items-center gap-3">
                 <svg className="w-5 h-5 text-robot-500" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -92,7 +92,7 @@ const Footer = () => {
         <Separator className="my-8 bg-gray-700" />
         
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-400 text-sm">© 2025 RobotSocial. Todos los derechos reservados.</p>
+          <p className="text-gray-400 text-sm">© 2025 Robotsconsultant. Todos los derechos reservados.</p>
           <div className="flex flex-wrap space-x-6 mt-4 md:mt-0 items-center">
             <Link to="/legal#cookies" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Cookies</Link>
             <Link to="/legal#privacidad" className="text-gray-400 text-sm hover:text-white transition-colors">Política de Privacidad</Link>

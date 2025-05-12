@@ -34,7 +34,7 @@ const HeroSection = () => {
           <div className="relative">
             <img 
                src= {miImagen}
-              alt="RobotSocial" 
+              alt="RobotsConsultant" 
               className="relative z-10 w-full max-w-lg mx-auto" 
             />
             

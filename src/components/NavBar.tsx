@@ -27,7 +27,7 @@ const NavBar = () => {
     )}>
       <div className="container flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-bold text-gradient">RobotSocial</a>
+          <a href="/" className="text-2xl font-bold text-gradient">RobotsConsultant</a>
         </div>
 
         {/* Desktop Navigation */}
