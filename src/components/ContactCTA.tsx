@@ -1,15 +1,14 @@
 
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-
 import { supabase } from "../lib/supabase";// Adjust the import path as necessary
 
 const ContactCTA = () => {
-
+  // Estado del formulario
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -17,58 +16,31 @@ const ContactCTA = () => {
     message: ''
   });
   
-  // Estado para manejar la respuesta del formulario
-  const [status, setStatus] = useState({
-    loading: false,
-    success: false,
-    error: null
+
+const handleChange = (e) => {
+  setFormData({ 
+    ...formData, 
+    [e.target.name]: e.target.value 
   });
+};
 
-  const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    
-    // Actualiza el estado para mostrar carga
-    setStatus({ loading: true, success: false, error: null });
-    
+const handleSubmit = async (e) => {
+    e.preventDefault();    
     try {
-
       const { error } = await supabase
-        .from('Leads')
-        .insert([
-          { 
-            name: formData.name, 
-            email: formData.email, 
-            phone: formData.phone, 
-            message: formData.message 
-          }
-        ]);
-      
-      if (error) throw error;
-
-      // Actualiza el estado para mostrar éxito
-      setStatus({ loading: false, success: true, error: null });
-      
-      // Opcional: resetea el formulario después de un envío exitoso
+      .from('Leads')
+      .insert([
+      { name: formData.name, email: formData.email, phone: formData.phone, message: formData.message }
+      ]);
+     if (error) {
       setFormData({ name: '', email: '', phone: '', message: '' });
-      
-      console.log('Datos enviados correctamente');
-    } catch (error) {
-      console.error('Error al enviar datos:', error);
-      setStatus({ 
-        loading: false, 
-        success: false, 
-        error: error.message || 'Error al enviar el formulario' 
-      });
-    }
-  };
-
+      console.error('Error inserting data:', error);
+      } else {
+      console.log('Data inserted successfully:', formData);
+     } } catch (err) {
+      console.error('Excepción no controlada:', err);
+    }  
+   };
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
       <div className="container">
@@ -164,12 +136,9 @@ const ContactCTA = () => {
                     </div>
                           <Button 
                       type="submit" 
-                      className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full"
-                      disabled={status.loading}
-                    >
-                      {status.loading ? 'Enviando...' : 'Solicitar Demo Gratis'}
+                      className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full"      >
+                      Solicitar Demostración
                     </Button>
-  
                   </form>
                 </div>
               </div>
