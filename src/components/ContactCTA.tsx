@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabaseClient } from "../../supabaseClient.js/supabaseClient";
+import { supabaseClient } from "../lib/supabaseClient";
 
  
   const [data, setTask] = useState({
@@ -14,12 +14,13 @@ import { supabaseClient } from "../../supabaseClient.js/supabaseClient";
     phone: '',
     message: ''
   });
-  const newForm= async (data: { name: any; email: any; phone: any; message: any; }) => {
-    const { datas, error } = await supabaseClient
+  const newForm = async (data) => {
+    const { error } = await supabaseClient
       .from('Leads')
       .insert([
         { name: data.name, email: data.email, phone: data.phone, message: data.message }
       ]);
+    
     if (error) {
       console.error('Error inserting data:', error);
     } else {
@@ -28,8 +29,10 @@ import { supabaseClient } from "../../supabaseClient.js/supabaseClient";
   }
 
   const handleChange = (e) => {
-    setTask({ ...data, [e.target.name]: e.target.value, [e.target.email]: e.target.value });
-
+    setTask({ 
+      ...data, 
+      [e.target.name]: e.target.value 
+    });
   };
 
   const handleSubmit = (e) => {
