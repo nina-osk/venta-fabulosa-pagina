@@ -24,10 +24,6 @@ const Index = () => {
         <VirtualReceptionist />
         <CustomizedRobots />
         <EcommerceSection />
-<<<<<<< HEAD
-
-=======
->>>>>>> 9e19d718d1600597b7e6a0480c0e81a803aef509
         <ContactCTA />
       </main>
       <Footer />
