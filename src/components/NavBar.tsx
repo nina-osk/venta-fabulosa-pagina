@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const NavBar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +28,7 @@ const NavBar = () => {
     )}>
       <div className="container flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-bold text-gradient">RobotsConsultant</a>
+          <Link to="/" className="text-2xl font-bold text-gradient">RobotsConsultant</Link>
         </div>
 
         {/* Desktop Navigation */}
@@ -35,6 +36,7 @@ const NavBar = () => {
           <a href="#soluciones" className="text-gray-700 hover:text-robot-600 font-medium">Soluciones</a>
           <a href="#restauracion" className="text-gray-700 hover:text-robot-600 font-medium">Restauración</a>
           <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium">Eventos</a>
+          <Link to="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium">Brazos Robóticos</Link>
           <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium">Videos</a>
           <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium">Contacto</a>
         </nav>
@@ -73,7 +75,7 @@ const NavBar = () => {
             <a href="#soluciones" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Soluciones</a>
             <a href="#restauracion" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Restauración</a>
             <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Eventos</a>
-            <a href="#brazosRoboticos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Roboticos</a>
+            <Link to="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Robóticos</Link>
             <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Videos</a>
             <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
             <Button variant="outline" className="border-robot-600 text-robot-600 w-full hover:bg-robot-50">

@@ -21,7 +21,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/legal" element={<LegalPolicies />} />
-          <Route path="/brazosRoboticos" element={<RoboticArms />} />
+          <Route path="/brazos-roboticos" element={<RoboticArms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
