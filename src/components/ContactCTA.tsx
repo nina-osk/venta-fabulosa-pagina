@@ -5,12 +5,10 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-<<<<<<< HEAD
-//import { supabaseClient } from "../lib/supabase";// Adjust the import path as necessary
-=======
-import { supabaseClient } from "../supabaseClient.js/supabaseClient";
 
->>>>>>> 9e19d718d1600597b7e6a0480c0e81a803aef509
+import { supabaseClient } from "../supabaseClient.js/supabaseClient";// Adjust the import path as necessary
+
+
  
   const [task, setTask] = useState({
     name: '',
@@ -18,7 +16,7 @@ import { supabaseClient } from "../supabaseClient.js/supabaseClient";
     phone: '',
     message: ''
   });
-<<<<<<< HEAD
+
  /* const newForm = async (data) => {
     const { error } = await supabaseClient
       .from('Leads')
@@ -33,21 +31,15 @@ import { supabaseClient } from "../supabaseClient.js/supabaseClient";
     }
   }
 */
-=======
-
->>>>>>> 9e19d718d1600597b7e6a0480c0e81a803aef509
-  const handleChange = (e) => {
+ const handleChange = (e) => {
     setTask({ ...task, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = (e) => {
-<<<<<<< HEAD
+
     e.preventDefault();   
     //newForm(data);
-=======
-    e.preventDefault();
-    // Handle form submission
->>>>>>> 9e19d718d1600597b7e6a0480c0e81a803aef509
+
   };
 
 
