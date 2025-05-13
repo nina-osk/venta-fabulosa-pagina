@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "@/lib/supabase";// Adjust the import path as necessary
+import { supabase } from "../lib/supabase";// Adjust the import path as necessary
 
 const ContactCTA = () => {
   // Estado del formulario
