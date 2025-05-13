@@ -6,10 +6,10 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
-//import { supabaseClient } from "../supabaseClient.js/supabaseClient";// Adjust the import path as necessary
+import { supabase } from "../lib/supabase";// Adjust the import path as necessary
 
 
- 
+
   const [task, setTask] = useState({
     name: '',
     email: '',
@@ -17,28 +17,29 @@ import { Textarea } from "@/components/ui/textarea";
     message: ''
   });
 
- /* const newForm = async (data) => {
-    const { error } = await supabaseClient
+const newForm = async () => {
+    const { error } = await supabase
       .from('Leads')
       .insert([
-        { name: data.name, email: data.email, phone: data.phone, message: data.message }
+        { name: task.name, email: task.email, phone:task.phone, message: task.message }
       ]);
     
     if (error) {
       console.error('Error inserting data:', error);
     } else {
-      console.log('Data inserted successfully:', data);
+      console.log('Data inserted successfully:', task);
     }
   }
-*/
- const handleChange = (e) => {
-    setTask({ ...task, [e.target.name]: e.target.value });
-  };
-
+const handleChange = (e) => {
+  setTask({ 
+    ...task, 
+    [e.target.name]: e.target.value 
+  });
+};
   const handleSubmit = (e) => {
 
     e.preventDefault();   
-    //newForm(data);
+    newForm();
 
   };
 
@@ -100,19 +101,19 @@ const ContactCTA = () => {
                   <form  onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                      <Input name="name" value={task.name} onChange={handleChange} placeholder="Name" className="w-full" />
+                      <Input name="name" onChange={handleChange} placeholder="Name" className="w-full" />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                      <Input name="email" value={task.email} onChange={handleChange} placeholder="Email" className="w-full" />
+                      <Input name="email" onChange={handleChange} placeholder="Email" className="w-full" />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                      <Input name="phone" value={task.phone} onChange={handleChange} placeholder="Phone" className="w-full" />
+                      <Input name="phone" onChange={handleChange} placeholder="Phone" className="w-full" />
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                      <Textarea name="message" value={task.message} onChange={handleChange} placeholder="Message" className="w-full" />
+                      <Textarea name="message" onChange={handleChange} placeholder="Message" className="w-full" />
                     </div>
                     <Button type="submit" className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full">
                       Solicitar Demo Gratis
