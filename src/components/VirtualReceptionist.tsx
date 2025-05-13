@@ -46,7 +46,7 @@ const VirtualReceptionist = () => {
         "LLamadas automaticas y personalizadas por cada visitante",
         "Múltiples idiomas disponibles instantáneamente",
         "Atención ininterrumpida 24 horas al día",
-        "Interacción natural y fluida con los clientes",
+        "Puede atender llamdas y realizar llamadas para aclarar dudas",
         "Integración con sistemas de gestión de clientes",
         "Capacidad de conocer tus procesos y de aprendizaje continuo"
       ]
@@ -57,7 +57,7 @@ const VirtualReceptionist = () => {
       features: [
         "Gestión automática de citas sin intervención humana",
         "Recordatorios automáticos a clientes",
-        "actualizacion y notificacion en caso de cancelaciones",
+        "Actualizacion y notificacion en caso de cancelaciones",
         "Integración con calendarios de todo su equipo",
         "Analytics avanzados sobre patrones de reservas"
       ]

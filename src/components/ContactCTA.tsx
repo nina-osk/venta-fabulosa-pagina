@@ -8,43 +8,66 @@ import { Textarea } from "@/components/ui/textarea";
 
 import { supabase } from "../lib/supabase";// Adjust the import path as necessary
 
-
-
 const ContactCTA = () => {
-  const [task, setTask] = useState({
+
+  const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
-
-const newForm = async () => {
-  /*  const { error } = await supabase
-      .from('Leads')
-      .insert([
-        { name: task.name, email: task.email, phone:task.phone, message: task.message }
-      ]);
-    
-    if (error) {
-      console.error('Error inserting data:', error);
-    } else {
-      console.log('Data inserted successfully:', task);
-    }*/
-  }
-const handleChange = (e) => {
-  setTask({ 
-    ...task, 
-    [e.target.name]: e.target.value 
+  
+  // Estado para manejar la respuesta del formulario
+  const [status, setStatus] = useState({
+    loading: false,
+    success: false,
+    error: null
   });
-};
-  const handleSubmit = (e) => {
 
-    e.preventDefault();   
-    newForm();
-
+  const handleChange = (e) => {
+    setFormData({ 
+      ...formData, 
+      [e.target.name]: e.target.value 
+    });
   };
 
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    
+    // Actualiza el estado para mostrar carga
+    setStatus({ loading: true, success: false, error: null });
+    
+    try {
 
+      const { error } = await supabase
+        .from('Leads')
+        .insert([
+          { 
+            name: formData.name, 
+            email: formData.email, 
+            phone: formData.phone, 
+            message: formData.message 
+          }
+        ]);
+      
+      if (error) throw error;
+
+      // Actualiza el estado para mostrar éxito
+      setStatus({ loading: false, success: true, error: null });
+      
+      // Opcional: resetea el formulario después de un envío exitoso
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      
+      console.log('Datos enviados correctamente');
+    } catch (error) {
+      console.error('Error al enviar datos:', error);
+      setStatus({ 
+        loading: false, 
+        success: false, 
+        error: error.message || 'Error al enviar el formulario' 
+      });
+    }
+  };
 
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
@@ -101,22 +124,50 @@ const handleChange = (e) => {
                   <form  onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                      <Input name="name" onChange={handleChange} placeholder="Name" className="w-full" />
+                       <Input 
+                        name="name" 
+                        value={formData.name}
+                        onChange={handleChange} 
+                        placeholder="Nombre" 
+                        className="w-full" 
+                      />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                      <Input name="email" onChange={handleChange} placeholder="Email" className="w-full" />
+                      <Input 
+                        name="email" 
+                        value={formData.email}
+                        onChange={handleChange} 
+                        placeholder="Email" 
+                        className="w-full" 
+                      />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                      <Input name="phone" onChange={handleChange} placeholder="Phone" className="w-full" />
+                       <Input 
+                        name="phone" 
+                        value={formData.phone}
+                        onChange={handleChange} 
+                        placeholder="Teléfono" 
+                        className="w-full" 
+                      />
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                      <Textarea name="message" onChange={handleChange} placeholder="Message" className="w-full" />
+                     <Textarea 
+                        name="message" 
+                        value={formData.message}
+                        onChange={handleChange} 
+                        placeholder="Mensaje" 
+                        className="w-full" 
+                      />
                     </div>
-                    <Button type="submit" className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full">
-                      Solicitar Demo Gratis
+                          <Button 
+                      type="submit" 
+                      className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full"
+                      disabled={status.loading}
+                    >
+                      {status.loading ? 'Enviando...' : 'Solicitar Demo Gratis'}
                     </Button>
   
                   </form>
