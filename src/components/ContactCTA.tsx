@@ -37,7 +37,7 @@ const handleSubmit = async (e) => {
       return;
     }
     
-    // Si tenemos las variables, insertamos en Supabase
+  
     const { error } = await supabase
       .from('Leads')
       .insert([
@@ -54,7 +54,8 @@ const handleSubmit = async (e) => {
       console.error('Error inserting data:', error);
       } else {
       console.log('Data inserted successfully:', formData);
-     } } catch (err) {
+     }
+      } catch (err) {
       console.error('Excepción no controlada:', err);
     }
    };
