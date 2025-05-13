@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "../lib/supabase";// Adjust the import path as necessary
+import { supabase } from "@/lib/supabase";// Adjust the import path as necessary
 
 const ContactCTA = () => {
   // Estado del formulario
@@ -26,6 +26,7 @@ const handleChange = (e) => {
 
 const handleSubmit = async (e) => {
     e.preventDefault();    
+    /*
     try {
       const { error } = await supabase
       .from('Leads')
@@ -39,7 +40,7 @@ const handleSubmit = async (e) => {
       console.log('Data inserted successfully:', formData);
      } } catch (err) {
       console.error('Excepción no controlada:', err);
-    }  
+    }*/
    };
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
