@@ -25,14 +25,30 @@ const handleChange = (e) => {
 };
 
 const handleSubmit = async (e) => {
-    e.preventDefault();    
-    /*
-    try {
-      const { error } = await supabase
+  e.preventDefault();
+  try {
+    // Verifica que tengamos las variables de entorno necesarias
+    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+      console.log('Demo mode: Las variables de Supabase no están configuradas');
+      
+      // En modo "demo", simplemente resetea el formulario
+      setFormData({ name: '', email: '', phone: '', message: '' });
+      // Aquí podrías mostrar un mensaje de éxito simulado
+      return;
+    }
+    
+    // Si tenemos las variables, insertamos en Supabase
+    const { error } = await supabase
       .from('Leads')
       .insert([
-      { name: formData.name, email: formData.email, phone: formData.phone, message: formData.message }
+        { 
+          name: formData.name, 
+          email: formData.email, 
+          phone: formData.phone, 
+          message: formData.message 
+        }
       ]);
+      
      if (error) {
       setFormData({ name: '', email: '', phone: '', message: '' });
       console.error('Error inserting data:', error);
@@ -40,7 +56,7 @@ const handleSubmit = async (e) => {
       console.log('Data inserted successfully:', formData);
      } } catch (err) {
       console.error('Excepción no controlada:', err);
-    }*/
+    }
    };
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
