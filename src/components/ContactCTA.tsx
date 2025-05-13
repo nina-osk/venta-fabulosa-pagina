@@ -18,10 +18,8 @@ const ContactCTA = () => {
     message: ''
   });
 
-  // Function to insert data into Supabase
-
 const newForm = async () => {
-    const { error } = await supabase
+  /*  const { error } = await supabase
       .from('Leads')
       .insert([
         { name: task.name, email: task.email, phone:task.phone, message: task.message }
@@ -31,7 +29,7 @@ const newForm = async () => {
       console.error('Error inserting data:', error);
     } else {
       console.log('Data inserted successfully:', task);
-    }
+    }*/
   }
 const handleChange = (e) => {
   setTask({ 
