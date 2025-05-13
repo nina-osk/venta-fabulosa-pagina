@@ -10,12 +10,15 @@ import { supabase } from "../lib/supabase";// Adjust the import path as necessar
 
 
 
+const ContactCTA = () => {
   const [task, setTask] = useState({
     name: '',
     email: '',
     phone: '',
     message: ''
   });
+
+  // Function to insert data into Supabase
 
 const newForm = async () => {
     const { error } = await supabase
@@ -45,7 +48,6 @@ const handleChange = (e) => {
 
 
 
-const ContactCTA = () => {
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
       <div className="container">
