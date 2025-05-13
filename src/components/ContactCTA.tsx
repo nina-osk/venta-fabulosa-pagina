@@ -1,9 +1,30 @@
 
 import React from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { supabaseClient } from "../supabaseClient.js/supabaseClient";
+
+ 
+  const [task, setTask] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+
+  const handleChange = (e) => {
+    setTask({ ...task, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // Handle form submission
+  };
+
+
 
 const ContactCTA = () => {
   return (
@@ -55,27 +76,30 @@ const ContactCTA = () => {
                     </div>
                   </div>
                 </div>
+                {/* Form Section */}  
+        
                 <div className="bg-white p-8">
-                  <form className="space-y-4">
+                  <form  onSubmit={handleSubmit} className="space-y-4">
                     <div>
                       <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                      <Input id="name" placeholder="Nombre completo" className="w-full" />
+                      <Input name="name" value={task.name} onChange={handleChange} placeholder="Name" className="w-full" />
                     </div>
                     <div>
                       <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                      <Input id="email" type="email" placeholder="correo@ejemplo.com" className="w-full" />
+                      <Input name="email" value={task.email} onChange={handleChange} placeholder="Email" className="w-full" />
                     </div>
                     <div>
                       <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                      <Input id="phone" placeholder="+34 XXX XXX XXX" className="w-full" />
+                      <Input name="phone" value={task.phone} onChange={handleChange} placeholder="Phone" className="w-full" />
                     </div>
                     <div>
                       <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                      <Textarea id="message" placeholder="Cuéntenos sobre su negocio y sus necesidades" className="w-full" />
+                      <Textarea name="message" value={task.message} onChange={handleChange} placeholder="Message" className="w-full" />
                     </div>
-                    <Button className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full">
+                    <Button type="submit" className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full">
                       Solicitar Demo Gratis
                     </Button>
+  
                   </form>
                 </div>
               </div>

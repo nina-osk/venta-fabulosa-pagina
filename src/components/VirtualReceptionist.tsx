@@ -41,14 +41,14 @@ const VirtualReceptionist = () => {
   const modules = [
     {
       icon: Users,
-      title: "RECEPCIONISTA ROBÓTICA CON IA",
+      title: "RECEPCIONISTA ROBÓTICA CON VOZ",
       features: [
-        "Recibimiento personalizado para cada visitante",
-        "Reconocimiento facial para clientes recurrentes",
+        "LLamadas automaticas y personalizadas por cada visitante",
         "Múltiples idiomas disponibles instantáneamente",
-        "Navegación autónoma por sus instalaciones",
-        "Telepresencia para comunicación con personal remoto",
-        "Atención ininterrumpida 24 horas al día"
+        "Atención ininterrumpida 24 horas al día",
+        "Interacción natural y fluida con los clientes",
+        "Integración con sistemas de gestión de clientes",
+        "Capacidad de conocer tus procesos y de aprendizaje continuo"
       ]
     },
     {
@@ -56,9 +56,8 @@ const VirtualReceptionist = () => {
       title: "SISTEMA DE AGENDAMIENTO INTELIGENTE",
       features: [
         "Gestión automática de citas sin intervención humana",
-        "Algoritmos predictivos para optimizar horarios",
         "Recordatorios automáticos a clientes",
-        "Redistribución inteligente en caso de cancelaciones",
+        "actualizacion y notificacion en caso de cancelaciones",
         "Integración con calendarios de todo su equipo",
         "Analytics avanzados sobre patrones de reservas"
       ]
