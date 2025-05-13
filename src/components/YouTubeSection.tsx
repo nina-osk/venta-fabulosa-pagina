@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { Youtube } from 'lucide-react';
+
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 
 const YouTubeSection = () => {
@@ -37,13 +37,12 @@ const YouTubeSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {videos.map((video) => (
-            <div key={video.id} className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden">
+            <div  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden">
               <div className="relative">
                 <AspectRatio ratio={16/9} className="w-full">
                   <iframe 
                     className="w-full h-full"
-                    src={`https://www.youtube.com/embed/${video.id}`}
-                    title={video.title}
+                    src={`https://www.youtube.com/robotsConsultant`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                   ></iframe>
@@ -64,7 +63,7 @@ const YouTubeSection = () => {
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-6 rounded-lg font-medium transition-all hover:shadow-lg"
           >
-            <Youtube className="w-5 h-5" />
+          
             Ver más videos en nuestro canal
           </a>
         </div>

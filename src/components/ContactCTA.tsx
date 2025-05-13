@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabaseClient } from "../lib/supabase";// Adjust the import path as necessary
+//import { supabaseClient } from "../lib/supabase";// Adjust the import path as necessary
  
   const [data, setTask] = useState({
     name: '',
@@ -13,7 +13,7 @@ import { supabaseClient } from "../lib/supabase";// Adjust the import path as ne
     phone: '',
     message: ''
   });
-  const newForm = async (data) => {
+ /* const newForm = async (data) => {
     const { error } = await supabaseClient
       .from('Leads')
       .insert([
@@ -26,7 +26,7 @@ import { supabaseClient } from "../lib/supabase";// Adjust the import path as ne
       console.log('Data inserted successfully:', data);
     }
   }
-
+*/
   const handleChange = (e) => {
     setTask({ 
       ...data, 
@@ -36,7 +36,7 @@ import { supabaseClient } from "../lib/supabase";// Adjust the import path as ne
 
   const handleSubmit = (e) => {
     e.preventDefault();   
-    newForm(data);
+    //newForm(data);
   };
 
 

@@ -24,7 +24,7 @@ const Index = () => {
         <VirtualReceptionist />
         <CustomizedRobots />
         <EcommerceSection />
-        <YouTubeSection />
+
         <ContactCTA />
       </main>
       <Footer />
