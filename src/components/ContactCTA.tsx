@@ -29,12 +29,12 @@ import { supabaseClient } from "../supabaseClient.js/supabaseClient";
 
   const handleChange = (e) => {
     setTask({ ...data, [e.target.name]: e.target.value, [e.target.email]: e.target.value });
-    newForm(data);
+
   };
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    // Handle form submission
+    e.preventDefault();   
+    newForm(data);
   };
 
 
