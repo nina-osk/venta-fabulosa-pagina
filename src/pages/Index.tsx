@@ -6,9 +6,9 @@ import RobotTypes from '@/components/RobotTypes';
 import Features from '@/components/Features';
 import UseCases from '@/components/UseCases';
 import VirtualReceptionist from '@/components/VirtualReceptionist';
+import RoboticArms from '@/pages/RoboticArms';
 import CustomizedRobots from '@/components/CustomizedRobots';
 import EcommerceSection from '@/components/EcommerceSection';
-import YouTubeSection from '@/components/YouTubeSection';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
 
@@ -24,7 +24,10 @@ const Index = () => {
         <VirtualReceptionist />
         <CustomizedRobots />
         <EcommerceSection />
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9e19d718d1600597b7e6a0480c0e81a803aef509
         <ContactCTA />
       </main>
       <Footer />

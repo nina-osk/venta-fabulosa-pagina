@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import {supabase} from "./supabaseClient.js/supabaseClient";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import LegalPolicies from "./pages/LegalPolicies";
@@ -21,7 +22,7 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/legal" element={<LegalPolicies />} />
-          <Route path="/brazos-roboticos" element={<RoboticArms />} />
+          <Route path="/brazosRoboticos" element={<RoboticArms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
