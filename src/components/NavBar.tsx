@@ -29,7 +29,7 @@ const NavBar = () => {
         <div className="flex items-center">
           <a href="/" className="flex items-center">
             <img 
-              src="/lovable-uploads/50845c67-9343-40e1-a272-9062499cdcc1.png" 
+              src="/lovable-uploads/e115d761-e250-4523-8c32-9b7ccbb47fd9.png" 
               alt="RobotsConsultant Logo" 
               className="h-10 md:h-12"
             />
