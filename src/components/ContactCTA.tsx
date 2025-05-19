@@ -1,61 +1,46 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+
+import React, { useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "../lib/supabase";
+
+// Declare the HubSpot object for TypeScript
+declare global {
+  interface Window {
+    hbspt?: any;
+  }
+}
 
 const ContactCTA = () => {
-  // Estado del formulario
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  });
-  
-  const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
-    });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      // Verifica que tengamos las variables de entorno necesarias
-      if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-        console.log('Demo mode: Las variables de Supabase no están configuradas');
-        
-        // En modo "demo", simplemente resetea el formulario
-        setFormData({ name: '', email: '', phone: '', message: '' });
-        // Aquí podrías mostrar un mensaje de éxito simulado
-        return;
+  // Load HubSpot script and create form when component mounts
+  useEffect(() => {
+    // Create a script element for HubSpot
+    const script = document.createElement('script');
+    script.src = '//js.hsforms.net/forms/embed/v2.js';
+    script.async = true;
+    script.onload = () => {
+      // Once the script is loaded, create the form
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          region: "na1", // Cambia esto según tu región de HubSpot
+          portalId: "your-portal-id", // Reemplaza con tu Portal ID de HubSpot
+          formId: "your-form-id", // Reemplaza con tu Form ID de HubSpot
+          target: '#hubspot-form-container'
+        });
       }
-      
-      const { error } = await supabase
-        .from('Leads')
-        .insert([
-          { 
-            name: formData.name, 
-            email: formData.email, 
-            phone: formData.phone, 
-            message: formData.message 
-          }
-        ]);
-        
-      if (error) {
-        setFormData({ name: '', email: '', phone: '', message: '' });
-        console.error('Error inserting data:', error);
-      } else {
-        console.log('Data inserted successfully:', formData);
-        setFormData({ name: '', email: '', phone: '', message: '' });
+    };
+    
+    // Add the script to the document
+    document.head.appendChild(script);
+    
+    // Cleanup function to remove the script when component unmounts
+    return () => {
+      document.head.removeChild(script);
+      // Remove the container's contents as well
+      const formContainer = document.getElementById('hubspot-form-container');
+      if (formContainer) {
+        formContainer.innerHTML = '';
       }
-    } catch (err) {
-      console.error('Excepción no controlada:', err);
-    }
-  };
+    };
+  }, []); // Empty dependency array means this effect runs once on mount
 
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
@@ -106,56 +91,9 @@ const ContactCTA = () => {
                     </div>
                   </div>
                 </div>
-                {/* Form Section */}  
-        
+                {/* HubSpot Form Container */}
                 <div className="bg-white p-8">
-                  <form  onSubmit={handleSubmit} className="space-y-4">
-                    <div>
-                      <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">Nombre</label>
-                       <Input 
-                        name="name" 
-                        value={formData.name}
-                        onChange={handleChange} 
-                        placeholder="Nombre" 
-                        className="w-full" 
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">Email</label>
-                      <Input 
-                        name="email" 
-                        value={formData.email}
-                        onChange={handleChange} 
-                        placeholder="Email" 
-                        className="w-full" 
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-1">Teléfono</label>
-                       <Input 
-                        name="phone" 
-                        value={formData.phone}
-                        onChange={handleChange} 
-                        placeholder="Teléfono" 
-                        className="w-full" 
-                      />
-                    </div>
-                    <div>
-                      <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">Mensaje</label>
-                     <Textarea 
-                        name="message" 
-                        value={formData.message}
-                        onChange={handleChange} 
-                        placeholder="Mensaje" 
-                        className="w-full" 
-                      />
-                    </div>
-                          <Button 
-                      type="submit" 
-                      className="bg-gradient-to-r from-robot-600 to-tech-600 text-white hover:shadow-lg w-full"      >
-                      Solicitar Demostración
-                    </Button>
-                  </form>
+                  <div id="hubspot-form-container" className="w-full"></div>
                 </div>
               </div>
             </CardContent>
