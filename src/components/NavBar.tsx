@@ -27,7 +27,13 @@ const NavBar = () => {
     )}>
       <div className="container flex items-center justify-between">
         <div className="flex items-center">
-          <a href="/" className="text-2xl font-bold text-gradient">RobotsConsultant</a>
+          <a href="/" className="flex items-center">
+            <img 
+              src="/lovable-uploads/50845c67-9343-40e1-a272-9062499cdcc1.png" 
+              alt="RobotsConsultant Logo" 
+              className="h-10 md:h-12"
+            />
+          </a>
         </div>
 
         {/* Desktop Navigation */}
