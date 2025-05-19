@@ -31,7 +31,7 @@ const NavBar = () => {
             <img 
               src="/lovable-uploads/e115d761-e250-4523-8c32-9b7ccbb47fd9.png" 
               alt="RobotsConsultant Logo" 
-              className="h-10 md:h-12"
+              className="h-20 md:h-24"
             />
           </a>
         </div>

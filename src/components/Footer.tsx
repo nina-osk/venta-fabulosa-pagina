@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Separator } from "@/components/ui/separator";
 import { Link } from "react-router-dom";
@@ -13,7 +14,7 @@ const Footer = () => {
               <img 
                 src="/lovable-uploads/e115d761-e250-4523-8c32-9b7ccbb47fd9.png" 
                 alt="RobotsConsultant Logo" 
-                className="h-12 invert" 
+                className="h-24 invert" 
               />
             </div>
             <p className="mb-6 text-gray-400">
