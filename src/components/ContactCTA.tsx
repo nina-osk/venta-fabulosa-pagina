@@ -2,42 +2,26 @@
 import React, { useEffect } from 'react';
 import { Card, CardContent } from "@/components/ui/card";
 
-// Declare the HubSpot object for TypeScript
-declare global {
-  interface Window {
-    hbspt?: any;
-  }
-}
-
 const ContactCTA = () => {
-  // Load HubSpot script and create form when component mounts
+  // Load HubSpot script when component mounts
   useEffect(() => {
     // Create a script element for HubSpot
     const script = document.createElement('script');
-    script.src = '//js.hsforms.net/forms/embed/v2.js';
-    script.async = true;
-    script.onload = () => {
-      // Once the script is loaded, create the form
-      if (window.hbspt) {
-        window.hbspt.forms.create({
-          region: "na1", // Cambia esto según tu región de HubSpot
-          portalId: "your-portal-id", // Reemplaza con tu Portal ID de HubSpot
-          formId: "your-form-id", // Reemplaza con tu Form ID de HubSpot
-          target: '#hubspot-form-container'
-        });
-      }
-    };
+    script.src = 'https://js-eu1.hsforms.net/forms/embed/146031285.js';
+    script.defer = true;
     
     // Add the script to the document
     document.head.appendChild(script);
     
     // Cleanup function to remove the script when component unmounts
     return () => {
-      document.head.removeChild(script);
-      // Remove the container's contents as well
-      const formContainer = document.getElementById('hubspot-form-container');
-      if (formContainer) {
-        formContainer.innerHTML = '';
+      // Find and remove the script
+      const scripts = document.head.getElementsByTagName('script');
+      for (let i = 0; i < scripts.length; i++) {
+        if (scripts[i].src.includes('js-eu1.hsforms.net/forms/embed/146031285.js')) {
+          document.head.removeChild(scripts[i]);
+          break;
+        }
       }
     };
   }, []); // Empty dependency array means this effect runs once on mount
@@ -91,9 +75,14 @@ const ContactCTA = () => {
                     </div>
                   </div>
                 </div>
-                {/* HubSpot Form Container */}
+                {/* HubSpot Form Container with the new embed code */}
                 <div className="bg-white p-8">
-                  <div id="hubspot-form-container" className="w-full"></div>
+                  <div 
+                    className="hs-form-frame" 
+                    data-region="eu1" 
+                    data-form-id="3ed163b6-4dee-4555-8c12-943c18ade29a" 
+                    data-portal-id="146031285">
+                  </div>
                 </div>
               </div>
             </CardContent>
