@@ -1,11 +1,9 @@
-
-import React from 'react';
-import { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { supabase } from "../lib/supabase";// Adjust the import path as necessary
+import { supabase } from "../lib/supabase";
 
 const ContactCTA = () => {
   // Estado del formulario
@@ -16,49 +14,49 @@ const ContactCTA = () => {
     message: ''
   });
   
+  const handleChange = (e) => {
+    setFormData({ 
+      ...formData, 
+      [e.target.name]: e.target.value 
+    });
+  };
 
-const handleChange = (e) => {
-  setFormData({ 
-    ...formData, 
-    [e.target.name]: e.target.value 
-  });
-};
-
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  try {
-    // Verifica que tengamos las variables de entorno necesarias
-    if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
-      console.log('Demo mode: Las variables de Supabase no están configuradas');
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      // Verifica que tengamos las variables de entorno necesarias
+      if (!import.meta.env.VITE_SUPABASE_URL || !import.meta.env.VITE_SUPABASE_ANON_KEY) {
+        console.log('Demo mode: Las variables de Supabase no están configuradas');
+        
+        // En modo "demo", simplemente resetea el formulario
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        // Aquí podrías mostrar un mensaje de éxito simulado
+        return;
+      }
       
-      // En modo "demo", simplemente resetea el formulario
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      // Aquí podrías mostrar un mensaje de éxito simulado
-      return;
-    }
-    
-  
-    const { error } = await supabase
-      .from('Leads')
-      .insert([
-        { 
-          name: formData.name, 
-          email: formData.email, 
-          phone: formData.phone, 
-          message: formData.message 
-        }
-      ]);
-      
-     if (error) {
-      setFormData({ name: '', email: '', phone: '', message: '' });
-      console.error('Error inserting data:', error);
+      const { error } = await supabase
+        .from('Leads')
+        .insert([
+          { 
+            name: formData.name, 
+            email: formData.email, 
+            phone: formData.phone, 
+            message: formData.message 
+          }
+        ]);
+        
+      if (error) {
+        setFormData({ name: '', email: '', phone: '', message: '' });
+        console.error('Error inserting data:', error);
       } else {
-      console.log('Data inserted successfully:', formData);
-     }
-      } catch (err) {
+        console.log('Data inserted successfully:', formData);
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      }
+    } catch (err) {
       console.error('Excepción no controlada:', err);
     }
-   };
+  };
+
   return (
     <section id="contacto" className="section bg-gradient-to-b from-white to-blue-50 relative">
       <div className="container">
