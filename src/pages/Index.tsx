@@ -12,6 +12,7 @@ import EcommerceSection from '@/components/EcommerceSection';
 import YouTubeSection from '@/components/YouTubeSection';
 import ContactCTA from '@/components/ContactCTA';
 import Footer from '@/components/Footer';
+import FloatingShopPopup from '@/components/FloatingShopPopup';
 
 const Index = () => {
   return (
@@ -29,6 +30,7 @@ const Index = () => {
         <ContactCTA />
       </main>
       <Footer />
+      <FloatingShopPopup />
     </div>
   );
 };
