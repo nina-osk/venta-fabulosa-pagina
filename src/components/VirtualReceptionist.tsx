@@ -46,7 +46,7 @@ const VirtualReceptionist = () => {
         "LLamadas automaticas y personalizadas por cada visitante",
         "Múltiples idiomas disponibles instantáneamente",
         "Atención ininterrumpida 24 horas al día",
-        "Puede atender llamdas y realizar llamadas para aclarar dudas",
+        "Puede atender llamadas y realizar llamadas para aclarar dudas",
         "Integración con sistemas de gestión de clientes",
         "Capacidad de conocer tus procesos y de aprendizaje continuo"
       ]

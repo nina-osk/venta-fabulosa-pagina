@@ -1,6 +1,7 @@
 
 import React, { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
+import { Link } from "react-router-dom";
 import { cn } from '@/lib/utils';
 
 const NavBar = () => {
@@ -47,9 +48,15 @@ const NavBar = () => {
         </nav>
 
         <div className="hidden md:flex items-center space-x-4">
+        <a
+         href="https://www.robotsconsultant.net/tienda"
+         target="_blank"
+         rel="noopener noreferrer"
+         >
           <Button variant="outline" className="border-robot-600 text-robot-600 hover:bg-robot-50">
-            Catálogo
+           Tienda
           </Button>
+          </a>
           <Button className="bg-gradient-to-r from-robot-600 to-tech-600 text-white">
             Solicitar Demo
           </Button>
@@ -83,9 +90,15 @@ const NavBar = () => {
             <a href="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Roboticos</a>
             <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Videos</a>
             <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
+           <a
+         href="https://www.robotsconsultant.net/tienda"
+         target="_blank"
+         rel="noopener noreferrer"
+         >
             <Button variant="outline" className="border-robot-600 text-robot-600 w-full hover:bg-robot-50">
-              Catálogo
+              Tienda
             </Button>
+            </a>
             <Button className="bg-gradient-to-r from-robot-600 to-tech-600 text-white w-full">
               Solicitar Demo
             </Button>

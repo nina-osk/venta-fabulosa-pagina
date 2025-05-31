@@ -16,7 +16,7 @@ const HeroSection = () => {
             </div>
             
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-              <span className="text-gradient">TRANSFORME SU NEGOCIO</span> CON ROBOTS SOCIALES
+              <span className="text-gradient">TRANSFORMA TU NEGOCIO</span> CON ROBOTS SOCIALES
             </h1>
             
             <p className="text-xl text-gray-700 mb-8">
