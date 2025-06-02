@@ -7,7 +7,7 @@ const YouTubeSection = () => {
   // Sample YouTube video IDs - replace these with your actual video IDs
   const videos = [
     {
-      id: "dQw4w9WgXcQ",
+      id: "w3-1n2CUf60",
       title: "¿Qué es la Robótica?",
       description: "En este video exploraremos que es la robotica, de manera simple.",
       href: "https://youtu.be/w3-1n2CUf60",
@@ -15,7 +15,7 @@ const YouTubeSection = () => {
       rel: "noopener noreferrer"
     },
     {
-      id: "9bZkp7q19f0",
+      id: "ixOYyol-EWE",
       title: "¿Qué es un brazo robótico?, ¿Qué tipos existen?",
       description: "Descubre los diferentes tipos de brazos robóticos y sus aplicaciones en la industria.",
       href: "https://youtu.be/ixOYyol-EWE",
@@ -23,7 +23,7 @@ const YouTubeSection = () => {
       rel: "noopener noreferrer"
     },
     {
-      id: "kJQP7kiw5Fk",
+      id: "sOLfQvYjSNs",
       title: "¿Qué es un agente de IA?",
       description: "Explora el concepto de agentes de inteligencia artificial y su impacto en la tecnología moderna.",
       href: "https://youtu.be/sOLfQvYjSNs",
@@ -68,7 +68,7 @@ const YouTubeSection = () => {
 
         <div className="flex justify-center">
           <a 
-            href="https://www.youtube.com/channel/UCxxxxxxxx" 
+            href="https://www.youtube.com/@RobotsConsultants" 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-red-600 to-red-700 text-white py-3 px-6 rounded-lg font-medium transition-all hover:shadow-lg"
