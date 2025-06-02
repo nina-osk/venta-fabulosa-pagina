@@ -8,18 +8,27 @@ const YouTubeSection = () => {
   const videos = [
     {
       id: "dQw4w9WgXcQ",
-      title: "Robots en Acción: Demostraciones en Vivo",
-      description: "Mira cómo nuestros robots interactúan en situaciones reales con clientes y visitantes."
+      title: "¿Qué es la Robótica?",
+      description: "En este video exploraremos que es la robotica, de manera simple.",
+      href: "https://youtu.be/w3-1n2CUf60",
+      target: "_blank",
+      rel: "noopener noreferrer"
     },
     {
       id: "9bZkp7q19f0",
-      title: "Guía de Mantenimiento de Robots",
-      description: "Aprende los procedimientos básicos para mantener tu equipo robótico en óptimas condiciones."
+      title: "¿Qué es un brazo robótico?, ¿Qué tipos existen?",
+      description: "Descubre los diferentes tipos de brazos robóticos y sus aplicaciones en la industria.",
+      href: "https://youtu.be/ixOYyol-EWE",
+      target: "_blank",
+      rel: "noopener noreferrer"
     },
     {
       id: "kJQP7kiw5Fk",
-      title: "Innovaciones en Robótica 2024",
-      description: "Descubre las últimas tecnologías que hemos incorporado a nuestros modelos este año."
+      title: "¿Qué es un agente de IA?",
+      description: "Explora el concepto de agentes de inteligencia artificial y su impacto en la tecnología moderna.",
+      href: "https://youtu.be/sOLfQvYjSNs",
+      target: "_blank",
+      rel: "noopener noreferrer"
     }
   ];
 
@@ -37,14 +46,15 @@ const YouTubeSection = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
           {videos.map((video) => (
-            <div  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden">
+            <div  className="bg-white rounded-xl shadow-lg hover:shadow-xl transition-all overflow-hidden"key={video.id}>
               <div className="relative">
                 <AspectRatio ratio={16/9} className="w-full">
                   <iframe 
                     className="w-full h-full"
-                    src={`https://www.youtube.com/robotsConsultant`}
+                    src={`https://www.youtube.com/embed/${video.id}`}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
+                    title={video.title}
                   ></iframe>
                 </AspectRatio>
               </div>
