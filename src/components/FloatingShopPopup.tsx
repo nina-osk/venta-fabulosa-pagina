@@ -24,7 +24,7 @@ const FloatingShopPopup = () => {
 
   const handleShopRedirect = () => {
     // Aquí puedes cambiar la URL por la de tu tienda real
-    window.open('https://tu-tienda.com', '_blank');
+    window.open('https://robotsconsultant.net/tienda/', '_blank');
   };
 
   if (!isVisible) return null;
