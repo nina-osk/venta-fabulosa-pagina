@@ -38,17 +38,17 @@ const NavBar = () => {
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center space-x-8">
-          <a href="#soluciones" className="text-gray-700 hover:text-robot-600 font-medium">Soluciones</a>
-          <a href="#restauracion" className="text-gray-700 hover:text-robot-600 font-medium">Restauración</a>
-          <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium">Eventos</a>
-          <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium">Videos</a>
-          <a href="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium">Brazos Roboticos</a>
-          <Link to="/robots-moviles" className="text-gray-700 hover:text-robot-600 font-medium">Robots Móviles</Link>
-          <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium">Contacto</a>
+        <nav className="hidden md:flex items-center space-x-6">
+          <a href="#soluciones" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Soluciones</a>
+          <a href="#restauracion" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Restauración</a>
+          <a href="#eventos" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Eventos</a>
+          <a href="#videos" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Videos</a>
+          <a href="/brazos-roboticos" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Brazos Roboticos</a>
+          <Link to="/robots-moviles" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Robots Móviles</Link>
+          <a href="#contacto" className="text-sm text-gray-700 hover:text-robot-600 font-medium">Contacto</a>
         </nav>
 
-        <div className="hidden md:flex items-center space-x-4">
+        <div className="hidden md:flex items-center space-x-6">
         <a
          href="https://www.robotsconsultant.net/tienda"
          target="_blank"
@@ -85,13 +85,13 @@ const NavBar = () => {
       {mobileMenuOpen && (
         <div className="md:hidden bg-white py-4 px-4 shadow-lg absolute top-full left-0 w-full">
           <nav className="flex flex-col space-y-4">
-            <a href="#soluciones" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Soluciones</a>
-            <a href="#restauracion" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Restauración</a>
-            <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Eventos</a>
-            <a href="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Roboticos</a>
-            <Link to="/robots-moviles" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Robots Móviles</Link>
-            <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Videos</a>
-            <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
+            <a href="#soluciones" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Soluciones</a>
+            <a href="#restauracion" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Restauración</a>
+            <a href="#eventos" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Eventos</a>
+            <a href="/brazos-roboticos" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Roboticos</a>
+            <Link to="/robots-moviles" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Robots Móviles</Link>
+            <a href="#videos" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Videos</a>
+            <a href="#contacto" className="text-sm text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
            <a
          href="https://www.robotsconsultant.net/tienda"
          target="_blank"
