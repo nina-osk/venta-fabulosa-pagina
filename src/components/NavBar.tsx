@@ -44,6 +44,7 @@ const NavBar = () => {
           <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium">Eventos</a>
           <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium">Videos</a>
           <a href="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium">Brazos Roboticos</a>
+          <Link to="/robots-moviles" className="text-gray-700 hover:text-robot-600 font-medium">Robots Móviles</Link>
           <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium">Contacto</a>
         </nav>
 
@@ -88,6 +89,7 @@ const NavBar = () => {
             <a href="#restauracion" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Restauración</a>
             <a href="#eventos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Eventos</a>
             <a href="/brazos-roboticos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Brazos Roboticos</a>
+            <Link to="/robots-moviles" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Robots Móviles</Link>
             <a href="#videos" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Videos</a>
             <a href="#contacto" className="text-gray-700 hover:text-robot-600 font-medium" onClick={() => setMobileMenuOpen(false)}>Contacto</a>
            <a

@@ -10,6 +10,7 @@ import NotFound from "./pages/NotFound";
 import LegalPolicies from "./pages/LegalPolicies";
 import CookieBanner from "./components/CookieBanner";
 import RoboticArms from "./pages/RoboticArms";
+import MobileRobots from "./pages/MobileRobots";
 
 const queryClient = new QueryClient();
 
@@ -23,6 +24,7 @@ const App = () => (
           <Route path="/" element={<Index />} />
           <Route path="/legal" element={<LegalPolicies />} />
           <Route path="/brazos-roboticos" element={<RoboticArms />} />
+          <Route path="/robots-moviles" element={<MobileRobots />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
         <CookieBanner />
